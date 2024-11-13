@@ -6,7 +6,7 @@
 /*   By: aroualid <aroualid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:24:49 by aroualid          #+#    #+#             */
-/*   Updated: 2024/11/12 18:35:23 by aroualid         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:46:48 by aroualid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,29 +66,4 @@ int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
-}
-
-char *ft_putnbr_basep(unsigned long nb, char *base, int len)
-{
-	long long		i;
-	char			*result;
-
-	result = ft_calloc(len, 1);
-	if (nb == 0)
-	{
-		return &(base[0]);
-	}
-	i = 0;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb *= -1;
-	}
-	while (nb > 0)
-	{
-		result[i] = base[nb % ft_strlen(base)];
-		nb /= ft_strlen(base);
-		i++;
-	}
-	return (result);
 }

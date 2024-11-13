@@ -6,7 +6,7 @@
 /*   By: aroualid <aroualid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:17:22 by aroualid          #+#    #+#             */
-/*   Updated: 2024/11/12 18:39:09 by aroualid         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:56:17 by aroualid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,30 +41,18 @@ int	ft_atoi(const char *str)
 	return (resultat * signe);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	count_symbol(char *str, char symbol)
 {
-	int		t1;
-	int		t2;
-	char	*ptr;
-	int		i;
-	int		j;
+	int	i;
+	int	res;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	j = 0;
+	res = 0;
 	i = 0;
-	t1 = ft_strlen(s1);
-	t2 = ft_strlen(s2);
-	ptr = ft_calloc(t1 + t2 + 1, 1);
-	if (!ptr)
-		return (NULL);
-	while (i < (t1 + t2))
+	while (str[i])
 	{
-		while (i < t1)
-			if (i++ >= 0)
-				ptr[i - 1] = s1[i - 1];
-		while (j < t2)
-			ptr[i++] = s2[j++];
+		if (str[i] == symbol)
+			res++;
+		i++;
 	}
-	return (ptr);
+	return (res);
 }

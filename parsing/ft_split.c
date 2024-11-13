@@ -6,7 +6,7 @@
 /*   By: aroualid <aroualid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:59:36 by aroualid          #+#    #+#             */
-/*   Updated: 2024/11/12 17:59:48 by aroualid         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:53:19 by aroualid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,4 +108,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (split);
 }
-

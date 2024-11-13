@@ -6,7 +6,7 @@
 /*   By: aroualid <aroualid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 09:17:24 by aroualid          #+#    #+#             */
-/*   Updated: 2024/11/04 13:56:12 by aroualid         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:53:28 by aroualid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,4 +128,3 @@ char	*get_next_line(int fd)
 		return (free(line), NULL);
 	return (line);
 }
-
