@@ -6,7 +6,7 @@
 /*   By: aroualid <aroualid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:36:01 by aroualid          #+#    #+#             */
-/*   Updated: 2024/11/13 13:55:52 by aroualid         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:02:53 by aroualid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,20 +104,28 @@ int	main(int ac, char **av)
 	parse->info = ft_calloc(sizeof(t_info), 1);
 	if (ac == 2)
 	{
-		parse->lines = ft_calloc(sizeof(char **), get_line(av[1]));
-		fd = open(av[1], O_RDONLY);
-		if (parse_args(parse, fd, av) == 0)
+		if (check_file(av[1]) == 1)
 		{
+			parse->lines = ft_calloc(sizeof(char **), get_line(av[1]));
+			fd = open(av[1], O_RDONLY);
+			if (parse_args(parse, fd, av) == 0)
+			{
+				close(fd);
+				return (0);
+			}
 			close(fd);
-			return (0);
+			printf("NO = %s\n", parse->info->no_path);
+			printf("SO = %s\n", parse->info->so_path);
+			printf("WE = %s\n", parse->info->we_path);
+			printf("EA = %s\n", parse->info->ea_path);
+			printf("F = %i\n", parse->info->f);
+			printf("C = %i\n", parse->info->c);
 		}
-		close(fd);
-		printf("NO = %s\n", parse->info->no_path);
-		printf("SO = %s\n", parse->info->so_path);
-		printf("WE = %s\n", parse->info->we_path);
-		printf("EA = %s\n", parse->info->ea_path);
-		printf("F = %i\n", parse->info->f);
-		printf("C = %i\n", parse->info->c);
+		else
+		{
+			printf("Error \nWrong file\n");
+			return  (0);
+		}
 	}
 	else
 	{

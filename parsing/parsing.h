@@ -6,7 +6,7 @@
 /*   By: aroualid <aroualid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:13:05 by aroualid          #+#    #+#             */
-/*   Updated: 2024/11/13 13:59:14 by aroualid         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:02:21 by aroualid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ char	*new_string(char *str, int taille);
 char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *str);
 int		count_symbol(char *str, char symbol);
-
+int		check_file(char *av);
 #endif
